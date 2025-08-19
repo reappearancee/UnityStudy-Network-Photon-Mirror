@@ -827,7 +827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome Photon
+  m_text: Welcome Fight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e184a9c1e8943e64092bdac8156878a4, type: 2}
   m_sharedMaterial: {fileID: -1304496791295832355, guid: e184a9c1e8943e64092bdac8156878a4, type: 2}
@@ -854,8 +854,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 136.8
-  m_fontSizeBase: 136.8
+  m_fontSize: 179
+  m_fontSizeBase: 179
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 0
+  m_CharacterLimit: 5
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
