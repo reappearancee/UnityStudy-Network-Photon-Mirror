@@ -15,7 +15,19 @@ public class AgentController : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        // anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        
+        agent.updateRotation = false;
+    }
+
+    void Update()
+    {
+        Vector3 dir = agent.desiredVelocity;
+        if (dir != Vector3.zero)
+        {
+            Quaternion targetRot = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * wanderRadius);
+        }
     }
 
     IEnumerator Start()
@@ -23,17 +35,21 @@ public class AgentController : MonoBehaviour
         while (true)
         {
             SetRandomDestination();
-            // anim.SetBool("IsWalk", true);
+            float moveType = Random.Range(0, 2) == 0 ? 0.5f : 1f;
+            anim.SetFloat("Speed", moveType); // 이동 애니메이션
+            agent.speed = moveType * 4f; // 2 or 4
+
             
             yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
             
-            // anim.SetBool("IsWalk", false);
+            anim.SetFloat("Speed", 0f); // 정지 애니메이션
+
             float idleTime = Random.Range(minWaitTime, maxWaitTime);
             yield return new WaitForSeconds(idleTime);
         }
     }
     
-    private void SetRandomDestination()
+    private void SetRandomDestination() // 랜덤 목적지 설정
     {
         var randomDir = Random.insideUnitSphere * wanderRadius;
         randomDir += transform.position;
