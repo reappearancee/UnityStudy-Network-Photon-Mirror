@@ -397,7 +397,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Character
+  m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
@@ -786,7 +786,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 71e1107abc3e6964da957f64625962f2, type: 2}
+    m_Motion: {fileID: 7400000, guid: 4edf362d321d8a240b558c497f142356, type: 2}
     m_Threshold: 6
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

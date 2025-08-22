@@ -43,6 +43,7 @@ public class Fight_PlayerController : MonoBehaviourPun
         {
             nickName.text = photonView.Owner.NickName;
             nickName.color = Color.red;
+            
             playerInput.enabled = false;
         }
     }

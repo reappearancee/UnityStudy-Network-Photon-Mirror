@@ -12,6 +12,8 @@ public class Find_PlayerController : MonoBehaviourPun
     
     [SerializeField] private GameObject punchBox;
     [SerializeField] private GameObject kickBox;
+    
+    private bool isAttack = false;
 
     void Awake()
     {
@@ -33,7 +35,8 @@ public class Find_PlayerController : MonoBehaviourPun
 
     void OnPunch()
     {
-        photonView.RPC(nameof(RPC_Punch), RpcTarget.All);
+        if (!isAttack)
+            photonView.RPC(nameof(RPC_Punch), RpcTarget.All);
     }
 
     [PunRPC]
@@ -44,17 +47,20 @@ public class Find_PlayerController : MonoBehaviourPun
 
     IEnumerator PunchRoutine()
     {
+        isAttack = true;
         anim.SetTrigger("Punch");
         yield return new WaitForSeconds(0.5f);
         punchBox.SetActive(true);
         
         yield return new WaitForSeconds(0.3f);
         punchBox.SetActive(false);
+        isAttack = false;
     }
 
     void OnKick()
     {
-        photonView.RPC(nameof(RPC_Kick), RpcTarget.All);
+        if (!isAttack)
+            photonView.RPC(nameof(RPC_Kick), RpcTarget.All);
     }
 
     [PunRPC]
@@ -65,11 +71,13 @@ public class Find_PlayerController : MonoBehaviourPun
     
     IEnumerator KickRoutine()
     {
+        isAttack = true;
         anim.SetTrigger("Kick");
         yield return new WaitForSeconds(0.6f);
         kickBox.SetActive(true);
 
         yield return new WaitForSeconds(0.2f);
         kickBox.SetActive(false);
+        isAttack = false;
     }
 }

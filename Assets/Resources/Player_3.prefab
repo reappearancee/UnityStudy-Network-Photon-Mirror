@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  SprintSpeed: 5.335
+  SprintSpeed: 4
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
@@ -2910,6 +2910,7 @@ GameObject:
   - component: {fileID: 8574926929392403335}
   - component: {fileID: 8724334001576722981}
   - component: {fileID: 8950470095413088411}
+  - component: {fileID: 6956399957221631805}
   m_Layer: 8
   m_Name: '[Hitbox] Kick'
   m_TagString: Untagged
@@ -3006,6 +3007,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6956399957221631805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4066866538706980047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba3ae96d39fa8f44ae10598c61887af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4166503339522675963
 GameObject:
   m_ObjectHideFlags: 0
@@ -5233,6 +5246,7 @@ GameObject:
   - component: {fileID: 1613502913571739515}
   - component: {fileID: 4310141133448967163}
   - component: {fileID: 7157354340792577860}
+  - component: {fileID: 3123553208796822070}
   m_Layer: 8
   m_Name: '[Hitbox] Punch'
   m_TagString: Untagged
@@ -5329,6 +5343,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3123553208796822070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7519870341365559406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba3ae96d39fa8f44ae10598c61887af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7637771796144457213
 GameObject:
   m_ObjectHideFlags: 0
